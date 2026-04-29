@@ -8,14 +8,6 @@ WORKDIR /app
 
 RUN pip install --upgrade pip==21.3.1
 
-RUN apt-get update && apt-get install -y \
-    gcc \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    python3-dev \
-    && rm -rf /var/lib/apt/lists/*
-
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
